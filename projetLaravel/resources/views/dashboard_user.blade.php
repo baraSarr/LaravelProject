@@ -27,6 +27,7 @@
                             style="background-color: #E5E3C9 ;margin-left: 33%;"></i>Modifier</a>
             <a href="{{route('epreuves.download',$epreuve->id)}}"class="btn-sm btn border-1 col-4 col-xs-12 mr-3"
                             style="background-color: #E5E3C9 ;margin-left: 33%;"></i>voir</a>
+                    </div>
             <a href="{{route('epreuves.delete',$epreuve->id)}}"class="btn-sm btn border-1 col-4 col-xs-12 mr-3"
                             style="background-color: #E5E3C9 ;margin-left: 33%;"></i>Supprimer</a>
             <a href="{{route('epreuves.create_correction',$epreuve->id)}}"class="btn-sm btn border-1 col-4 col-xs-12 mr-3"
@@ -77,6 +78,7 @@
         <th>Nom</th>
         <th>Email</th>
         <th>Esmt</th>
+        <th>Actions</th>
     </tr>
     @foreach($users as $user)
         <tr>
@@ -90,6 +92,10 @@
                 @else
                     Oui
                 @endif
+            </td>
+            <td>
+                <a href="{{route('users.edit',$user->id)}}" class="btn btn-info">update</a>
+                <a href="{{route('users.delete',$user->id)}}" class="btn btn-danger">delete</a>
             </td>
         </tr>
     @endforeach
